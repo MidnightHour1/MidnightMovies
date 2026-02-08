@@ -8,6 +8,11 @@ const movies = [
  title:"Halloween (1978)",
  poster:"https://image.tmdb.org/t/p/w300/vjoOFOTBJcJvA1weJejlZ92LZD4.jpg",
  trailer:"https://www.youtube.com/embed/xHuOtLTQ_1I"
+},
+{
+ title:"Alien (1979)",
+ poster:"https://image.tmdb.org/t/p/w300/jQ5lPt9edzQ.jpg",
+ trailer:"https://www.youtube.com/embed/jQ5lPt9edzQ"
 }
 ];
 
@@ -18,12 +23,12 @@ row.innerHTML = "";
 
 movies.forEach(movie=>{
   const card = document.createElement("div");
-  card.className = "movie-card";
-  card.innerHTML = `
+  card.className="movie-card";
+  card.innerHTML=`
     <img src="${movie.poster}">
     <p>${movie.title}</p>
   `;
-  card.onclick = () => {
+  card.onclick=()=>{
     mainTrailer.src = movie.trailer;
   };
   row.appendChild(card);
