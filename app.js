@@ -6,64 +6,39 @@ const movies = [
 {title:"Terminator 2",genre:"action",poster:"https://image.tmdb.org/t/p/w300/5M0j0B18abtBI5gi2RhfjjurTqb.jpg",trailer:"https://www.youtube.com/embed/CRRlbK5w8AE"}
 ];
 
-const row=document.getElementById("movieRow");
-const mainTrailer=document.getElementById("mainTrailer");
+const grid=document.getElementById("grid");
+const player=document.getElementById("player");
 const search=document.getElementById("search");
-const genreFilter=document.getElementById("genreFilter");
-const rouletteBtn=document.getElementById("rouletteBtn");
-
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+const genre=document.getElementById("genre");
+const roulette=document.getElementById("roulette");
 
 function render(list){
-row.innerHTML="";
-list.forEach(movie=>{
-const card=document.createElement("div");
-card.className="movie-card";
-
-const fav = favorites.includes(movie.title) ? "★" : "☆";
-
-card.innerHTML=`
-<img src="${movie.poster}">
-<p>${movie.title}</p>
-<span class="favorite">${fav}</span>
+grid.innerHTML="";
+list.forEach(m=>{
+const d=document.createElement("div");
+d.className="card";
+d.innerHTML=`
+<img src="${m.poster}">
+<p>${m.title}</p>
 `;
-
-card.onclick=()=>{
-mainTrailer.src=movie.trailer;
-};
-
-card.querySelector(".favorite").onclick=(e)=>{
-e.stopPropagation();
-toggleFav(movie.title);
-};
-
-row.appendChild(card);
+d.onclick=()=>player.src=m.trailer;
+grid.appendChild(d);
 });
 }
 
-function toggleFav(title){
-if(favorites.includes(title)){
-favorites=favorites.filter(f=>f!==title);
-}else{
-favorites.push(title);
-}
-localStorage.setItem("favorites",JSON.stringify(favorites));
-render(filteredMovies());
-}
-
-function filteredMovies(){
+function filtered(){
 return movies.filter(m=>{
-return (genreFilter.value==="all"||m.genre===genreFilter.value)
+return (genre.value==="all"||m.genre===genre.value)
 && m.title.toLowerCase().includes(search.value.toLowerCase());
 });
 }
 
-search.oninput=()=>render(filteredMovies());
-genreFilter.onchange=()=>render(filteredMovies());
+search.oninput=()=>render(filtered());
+genre.onchange=()=>render(filtered());
 
-rouletteBtn.onclick=()=>{
-const random = movies[Math.floor(Math.random()*movies.length)];
-mainTrailer.src=random.trailer;
+roulette.onclick=()=>{
+const r=movies[Math.floor(Math.random()*movies.length)];
+player.src=r.trailer;
 };
 
 render(movies);
