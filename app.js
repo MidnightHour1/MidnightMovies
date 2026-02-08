@@ -11,10 +11,15 @@ const row = document.getElementById("movieRow");
 movies.forEach(movie => {
   const card = document.createElement("div");
   card.className = "movie-card";
+
   card.innerHTML = `
     <img src="${movie.poster}">
     <p>${movie.title}</p>
   `;
+
+  card.onclick = () => {
+    alert("Selected movie: " + movie.title);
+  };
+
   row.appendChild(card);
 });
-
