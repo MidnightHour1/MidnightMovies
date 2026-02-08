@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>MidnightMovies</title>
@@ -12,7 +12,7 @@
   <h1>Midnight<br>Movies</h1>
   <nav>
     <a href="#">Home</a>
-    <a href="#">Movies</a>
+    <a href="#movies">Movies</a>
     <a href="#">Top Lists</a>
     <a href="#">Sign In</a>
   </nav>
@@ -20,7 +20,7 @@
 
 <section class="tv-section">
   <div class="tv-frame">
-    <iframe 
+    <iframe
       id="mainTrailer"
       src="https://www.youtube.com/embed/5ftmr17M-a4"
       allowfullscreen>
@@ -28,4 +28,11 @@
   </div>
 </section>
 
-<secti
+<section class="shelves" id="movies">
+  <h2>Popular Movies</h2>
+  <div class="movie-row" id="movieRow"></div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
