@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>MidnightMovies</title>
@@ -9,28 +9,31 @@
 <body>
 
 <header class="topbar">
-  <h1>Midnight<br>Movies</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#movies">Movies</a>
-    <a href="#">Top Lists</a>
-    <a href="#">Sign In</a>
-  </nav>
+<h1>Midnight<br>Movies</h1>
+
+<input id="search" placeholder="Search movie...">
+
+<select id="genreFilter">
+<option value="all">All Genres</option>
+<option value="horror">Horror</option>
+<option value="scifi">Sci-Fi</option>
+<option value="action">Action</option>
+</select>
+
+<button id="rouletteBtn">🎲 Roulette</button>
 </header>
 
 <section class="tv-section">
-  <div class="tv-frame">
-    <iframe
-      id="mainTrailer"
-      src="https://www.youtube.com/embed/5ftmr17M-a4"
-      allowfullscreen>
-    </iframe>
-  </div>
+<div class="tv-frame">
+<iframe id="mainTrailer"
+src="https://www.youtube.com/embed/5ftmr17M-a4"
+allowfullscreen></iframe>
+</div>
 </section>
 
-<section class="shelves" id="movies">
-  <h2>Popular Movies</h2>
-  <div class="movie-row" id="movieRow"></div>
+<section class="shelves">
+<h2>Movies</h2>
+<div id="movieRow" class="movie-row"></div>
 </section>
 
 <script src="app.js"></script>
