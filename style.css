@@ -1,17 +1,17 @@
 body{
 margin:0;
 font-family:Arial;
-background:radial-gradient(circle,#0b0020,#000);
 color:white;
+background:url("ChatGPT Image 4 feb. 2026 09_12_47.png") center/cover fixed;
 }
 
 .topbar{
 display:flex;
-gap:15px;
+gap:10px;
 align-items:center;
-padding:20px;
-background:#12001a;
-box-shadow:0 0 25px #ff2fd0;
+padding:15px;
+background:rgba(0,0,0,0.7);
+box-shadow:0 0 20px #ff2fd0;
 }
 
 .topbar h1{
@@ -22,8 +22,8 @@ margin-right:auto;
 
 input,select,button{
 padding:8px;
-border:none;
 border-radius:6px;
+border:none;
 }
 
 button{
@@ -31,58 +31,50 @@ background:#00ffe7;
 cursor:pointer;
 }
 
-.tv-section{
+.room{
+backdrop-filter:blur(2px);
+min-height:100vh;
+}
+
+.tv{
 display:flex;
 justify-content:center;
 padding:40px;
 }
 
-.tv-frame{
+.tv iframe{
 width:900px;
 height:500px;
-background:black;
-padding:20px;
 border-radius:25px;
 box-shadow:0 0 50px #00ffe7;
+border:none;
 }
 
-.tv-frame iframe{
-width:100%;
-height:100%;
-border-radius:15px;
-}
-
-.shelves{
+.movies{
 padding:40px;
 }
 
-.movie-row{
-display:flex;
+#grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,160px);
 gap:20px;
-flex-wrap:wrap;
 }
 
-.movie-card{
-width:160px;
+.card{
 background:#1b1b2f;
 padding:10px;
 border-radius:10px;
 text-align:center;
 cursor:pointer;
 box-shadow:0 0 10px #ff2fd0;
+transition:.2s;
 }
 
-.movie-card:hover{
+.card:hover{
 transform:scale(1.05);
 }
 
-.movie-card img{
+.card img{
 width:100%;
 border-radius:6px;
-}
-
-.favorite{
-color:gold;
-font-size:20px;
-cursor:pointer;
 }
