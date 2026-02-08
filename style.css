@@ -5,7 +5,7 @@ margin:0;
 font-family:Arial, sans-serif;
 }
 
-/* TOP BAR */
+/* HEADER */
 
 .topbar{
 display:flex;
@@ -26,25 +26,30 @@ margin:0;
 color:#00ffe7;
 margin-left:25px;
 text-decoration:none;
-font-size:18px;
 }
 
-/* TV SECTION */
+/* TV */
 
 .tv-section{
 display:flex;
 justify-content:center;
-padding:60px 20px;
+padding:60px;
 }
 
 .tv-frame{
+position:relative;
 width:900px;
-max-width:95%;
 height:500px;
-background:#050505;
-border-radius:25px;
+background:black;
 padding:25px;
-box-shadow:0 0 40px #00ffe7, inset 0 0 20px #000;
+border-radius:25px;
+animation:glow 3s infinite alternate;
+box-shadow:0 0 40px #00ffe7;
+}
+
+@keyframes glow{
+from{ box-shadow:0 0 25px #00ffe7;}
+to{ box-shadow:0 0 60px #00ffe7;}
 }
 
 .tv-frame iframe{
@@ -53,66 +58,4 @@ height:100%;
 border-radius:15px;
 }
 
-/* MOVIE SHELVES */
-
-.shelves{
-padding:40px;
-}
-
-.shelves h2{
-color:#ff2fd0;
-margin-bottom:20px;
-}
-
-.movie-row{
-display:flex;
-gap:20px;
-overflow-x:auto;
-padding-bottom:20px;
-}
-
-.movie-card{
-min-width:160px;
-background:#1b1b2f;
-padding:10px;
-border-radius:10px;
-text-align:center;
-box-shadow:0 0 10px #ff2fd0;
-transition:transform 0.2s;
-}
-
-.movie-card:hover{
-transform:scale(1.05);
-}
-
-.movie-card img{
-width:100%;
-border-radius:6px;
-}
-
-.movie-card p{
-margin-top:10px;
-font-size:14px;
-}
-/* GLASS EFFECT ON TV */
-
-.tv-frame{
-position:relative;
-width:900px;
-max-width:95%;
-height:500px;
-background:#050505;
-border-radius:25px;
-padding:25px;
-animation:glow 3s infinite alternate;
-box-shadow:0 0 40px #00ffe7, inset 0 0 20px #000;
-}
-
-@keyframes glow{
-from{
- box-shadow:0 0 25px #00ffe7, inset 0 0 20px #000;
-}
-to{
- box-shadow:0 0 60px #00ffe7, inset 0 0 25px #000;
-}
-}
+/* MOVIE*
