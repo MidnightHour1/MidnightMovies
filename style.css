@@ -5,8 +5,6 @@ margin:0;
 font-family:Arial;
 }
 
-/* HEADER */
-
 .topbar{
 display:flex;
 justify-content:space-between;
@@ -68,6 +66,7 @@ border-radius:10px;
 text-align:center;
 cursor:pointer;
 box-shadow:0 0 10px #ff2fd0;
+transition:0.2s;
 }
 
 .movie-card:hover{
