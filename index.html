@@ -9,32 +9,38 @@
 <body>
 
 <header class="topbar">
-<h1>Midnight<br>Movies</h1>
+  <h1>Midnight<br>Movies</h1>
 
-<input id="search" placeholder="Search movie...">
+  <input id="search" placeholder="Search movie...">
 
-<select id="genreFilter">
-<option value="all">All Genres</option>
-<option value="horror">Horror</option>
-<option value="scifi">Sci-Fi</option>
-<option value="action">Action</option>
-</select>
+  <select id="genre">
+    <option value="all">All</option>
+    <option value="horror">Horror</option>
+    <option value="scifi">Sci-Fi</option>
+    <option value="action">Action</option>
+  </select>
 
-<button id="rouletteBtn">🎲 Roulette</button>
+  <button id="roulette">🎲 Roulette</button>
 </header>
 
-<section class="tv-section">
-<div class="tv-frame">
-<iframe id="mainTrailer"
-src="https://www.youtube.com/embed/5ftmr17M-a4"
-allowfullscreen></iframe>
-</div>
+<div class="room">
+
+<section class="tv">
+  <iframe id="player"
+  src="https://www.youtube.com/embed/5ftmr17M-a4"
+  allowfullscreen></iframe>
 </section>
 
-<section class="shelves">
-<h2>Movies</h2>
-<div id="movieRow" class="movie-row"></div>
+<section class="movies">
+  <div id="grid"></div>
 </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
 
 <script src="app.js"></script>
 </body>
